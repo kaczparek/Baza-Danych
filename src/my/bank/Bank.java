@@ -41,7 +41,7 @@ public class Bank  {
                 
             }
         }
-        System.out.print("3");
+        
         return null;
     }
     
@@ -50,11 +50,17 @@ public class Bank  {
         if (!file.exists() || file.length() == 0) {
             return; // pliku nie ma albo jest pusty (wiec nie ma bazy)
         }
-        
+        this.zarzad = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(this.bazaZarzadcy))) {
             for (String line; ((line = br.readLine()) != null);) {
-                String[] k = line.split("|");
-                System.out.println(line);
+                String[] k = line.split("\\|");
+                int id = Integer.parseInt(k[0]);
+                String imie = k[1];
+                String nazwisko = k[2];
+                String pozycja = k[3];
+                int wiek = Integer.parseInt(k[4]);
+                Zarzadca nowyZarzadca = new Zarzadca(id, imie, nazwisko, pozycja, wiek);
+                this.dodajZarzadce(nowyZarzadca);
                 
             }
         }
@@ -92,8 +98,20 @@ public class Bank  {
         this.zarzad.add(zarzadca);
     }
     
-    public void usunZarzadce(Zarzadca zarzadca) {
-        this.zarzad.remove(zarzadca);
+    public void usunZarzadce(int id) {
+        for (Zarzadca zarzadca : this.zarzad) {
+            if (zarzadca.id == id) {
+                this.zarzad.remove(zarzadca);
+                return;
+            }
+        }
     }
     
+    public Zarzadca wezZarzadce(int id){
+        return this.zarzad.get(id);
+    }
+    
+    public ArrayList<Zarzadca> wezZarzadcow(){
+        return this.zarzad;
+    }
 }

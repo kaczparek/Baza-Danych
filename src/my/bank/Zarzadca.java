@@ -10,11 +10,13 @@ package my.bank;
  * @author mateu
  */
 public class Zarzadca {
+    int id;
     String imie, nazwisko;
     String pozycja;
     int wiek;
     
-    public Zarzadca(String imie, String nazwisko, String pozycja, int wiek) {
+    public Zarzadca( int id,String imie, String nazwisko, String pozycja, int wiek) {
+        this.id = id;
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.pozycja = pozycja;
