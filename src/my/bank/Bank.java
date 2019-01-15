@@ -45,10 +45,10 @@ public class Bank  {
         return null;
     }
     
-    public void wczytajZarzadcow() throws FileNotFoundException, IOException {
+    public String wczytajZarzadcow() throws FileNotFoundException, IOException {
         File file = new File(this.bazaZarzadcy);
         if (!file.exists() || file.length() == 0) {
-            return; // pliku nie ma albo jest pusty (wiec nie ma bazy)
+            return null; // pliku nie ma albo jest pusty (wiec nie ma bazy)
         }
         this.zarzad = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(this.bazaZarzadcy))) {
@@ -64,7 +64,8 @@ public class Bank  {
                 
             }
         }
-    }
+        return null;
+    }        
     
     public boolean zaloguj(String login, String haslo) {
         if (this.login.equals(login) && this.haslo.equals(haslo)) {
