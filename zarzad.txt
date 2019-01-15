@@ -1,1 +1,11 @@
-1|jTextField10|jTextField11|jTextField12|22|
+000001|Szymon|Kaczmarek|Prezes|22
+000002|Karola|Kaczmarek|Menager|25
+000003|Joanna|Ul|Boss|29
+000004|Artur|Peru|IT|34
+000005|Witold|Kos|IT|51
+000006|Henryk|Klej|Security|44
+000007|Helena|Farba|Worker|31
+000008|Monika|Rak|Worker|29
+000009|Ewelina|Lupa|Custome Service|37
+0000010|Barbara|Tyc|CO-Worker|41
+0000011|Maria|Tryc|TC|55
